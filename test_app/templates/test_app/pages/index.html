@@ -1,0 +1,9 @@
+{% extends "./base.html" %}
+{% load tree_menu.extensions %}
+
+{% block content %}
+<main>
+    {% draw_menu "main" %}
+    {% draw_menu "admin" %}
+</main>
+{% endblock %}

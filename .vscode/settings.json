@@ -1,0 +1,11 @@
+{
+  "python.linting.pycodestyleEnabled": true,
+  "python.linting.enabled": true,
+  "files.associations": {
+    "**/*.html": "html",
+    "**/templates/**/*.html": "django-html"
+  },
+  "[django-html]": {
+    "editor.defaultFormatter": "batisteo.vscode-django"
+  }
+}

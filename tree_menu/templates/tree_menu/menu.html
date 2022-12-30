@@ -1,0 +1,14 @@
+{% load tree_menu.extensions %}
+
+<ul class="tree">
+    <li>
+        <details {% if active_item in items %}open{% endif %}>
+            <summary>{{ category_name }}</summary>
+            <ul>
+                {% for k, v in items.items %}
+                    {% include "tree_menu/menu_item.html" with item=k items=v active_item=active_item %}
+                {% endfor %}
+            <ul>
+        </details>
+    </li>
+</ul>

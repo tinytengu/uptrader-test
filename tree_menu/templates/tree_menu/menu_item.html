@@ -1,0 +1,38 @@
+{% if not items|length %}
+<li>
+    <a
+        href={% if item.is_url %} {{ item.url }} {% else %} {% url item.url %} {% endif %}
+        target={% if item.is_url %} "_blank" {% else %} "_self" {% endif %}
+    >
+        {% if active_item == item %}
+            <b>{{ item.text }}</b>
+        {% else %}
+            {{ item.text }}
+        {% endif %}
+    </a>
+</li>
+{% else %}
+<li>
+    <li>
+        <details {% if active_item == item %}open{% endif %}>
+            <summary>
+                <a
+                    href={% if item.is_url %} {{ item.url }} {% else %} {% url item.url %} {% endif %}
+                    target={% if item.is_url %} "_blank" {% else %} "_self" {% endif %}
+                >
+                {% if active_item == item %}
+                    <b>{{ item.text }}</b>
+                {% else %}
+                    {{ item.text }}
+                {% endif %}
+                </a>
+            </summary>
+            <ul>
+                {% for k, v in items.items %}
+                    {% include "tree_menu/menu_item.html" with item=k items=v %}
+                {% endfor %}
+            <ul>
+        </details>
+    </li>
+</li>
+{% endif %}
