@@ -14,7 +14,7 @@
 
 ## Использованные библиотеки
 * [Django 4.1.4](https://www.djangoproject.com/)
-* Линтер и форматтер:
+* Линтер и форматтер (DX есть DX):
   * [pycodestyle 2.10.0](https://github.com/PyCQA/pycodestyle)
   * [black 22.12.0](https://github.com/psf/black)
 
